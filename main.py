@@ -74,7 +74,7 @@ class InputPage(webapp2.RequestHandler):
 			if (db.GqlQuery("select * from URLMap where shortURL = :something", something=result).get()) is None:
 				a = URLMap(longURL=inpurl, shortURL=result) # creates the db object URLMap
 				a.put() # puts the data in the object in the URLMap entity (table)		
-			self.renderwrite('processed.html', {'shorty': 'http://shorty-rc.appspot.com/'+result})
+			self.renderwrite('processed.html', {'shorty': 'http://huffyrc.appspot.com/'+result})
 		else:
 			# display page again, but with error mesg
 			self.renderwrite('front.html', {'inperr':"That's an invalid url, enter again!", 'inpval':inpurl})
